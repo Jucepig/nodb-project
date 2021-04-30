@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header id="header" className="flex-row">
+        <h3>WatchLst</h3>
       </header>
+
+      <div id="main-container" className="flex-row">
+        <div id="main" className="flex-row">
+          
+          <aside id="show-form" className="flex-column">
+            <h5>Add A Show!</h5>
+            <div className="flex-column">
+              <input className="show-form-input" placeholder="Enter Title"/>
+              <input className="show-form-input" placeholder="Enter Genre"/>
+              <input className="show-form-input" placeholder="Enter # of episodes"/>
+              <input className="show-form-input" placeholder="Enter mins per episode"/>
+              <button id="submit-btn">Add to WatchList</button>
+            </div>
+          </aside>
+
+          <section id="show-list">
+
+          </section>
+
+        </div>
+      </div>
     </div>
   );
 }
