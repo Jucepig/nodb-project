@@ -60,4 +60,51 @@ body {
   height: 100%;
   width: 67%;
   background-color: darkgoldenrod;
+  align-items: center;
+}
+
+#wl-header {
+  background-color: darkorchid;
+  width: 100%;
+  text-align: center;
+  height: 5%;
+}
+
+#wl-list {
+  background-color: lightcoral;
+  width: 100%;
+  height: 90%;
+  overflow: auto;
+}
+
+.show-item {
+  background-color: lightgreen;
+  height: 50px;
+  margin-top: 5px;
+}
+
+.si-btns {
+  width: 20%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.si-btns button{
+  width: 65px;
+}
+
+.show-details {
+  width: 80%;
+  background-color: lightgoldenrodyellow;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+#wl-footer {
+  background-color: lightblue;
+  width: 100%;
+  height: 5%;
+  text-align: right;
 }
