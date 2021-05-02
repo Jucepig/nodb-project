@@ -7,7 +7,7 @@ class ShowList extends Component {
     super()
 
     this.state = {
-      shows : []
+      showsArr : []
     }
   }
 
@@ -15,7 +15,7 @@ class ShowList extends Component {
     axios
       .get('/api/shows')
       .then((res) => {
-        this.setState({shows : res.data})
+        this.setState({showsArr : res.data})
       })
       .catch((err) => console.log(err))
   }
@@ -23,21 +23,21 @@ class ShowList extends Component {
   addShow = (title, genre, numOfEps, minsPerEp) => {
     axios
       .post('/api/shows', {title, genre, numOfEps, minsPerEp})
-      .then((res) => this.setState({shows : res.data}))
+      .then((res) => this.setState({showsArr : res.data}))
       .catch((err) => console.log(err))
   }
 
   editShow = (id, title, genre, numOfEps, minsPerEp) => {
     axios
       .put(`/api/shows/${id}`, {title, genre, numOfEps, minsPerEp})
-      .then((res) => {this.setState({shows : res.data})})
+      .then((res) => {this.setState({showsArr : res.data})})
       .catch((err) => console.log(err))
   }
 
   deleteShow = (id) => {
     axios
       .delete(`/api/shows/${id}`)
-      .then((res) => {this.setState({shows: res.data})})
+      .then((res) => {this.setState({showsArr: res.data})})
       .catch((err) => console.log(err))
   }
 
@@ -45,7 +45,7 @@ class ShowList extends Component {
     return(
       <div id="main" className="flex-row">
         
-        <AddShow />
+        <AddShow addShowFn={this.addShow} />
 
         <section id="show-list" className="flex-column">
           <header id="wl-header">WATCHLiiST</header>

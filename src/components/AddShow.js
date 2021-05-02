@@ -7,14 +7,35 @@ class AddShow extends Component {
     this.state = {
       title: '',
       genre: '',
-      numOfEps: 0,
-      minsPerEp: 0
+      numOfEps: '',
+      minsPerEp: ''
     }
   }
 
-  handleChange = (e) => {
-    this.setState = ({
+  handleTextChange = (e) => {
+    console.log(`${e.target.name} : ${e.target.value}`)
+    this.setState({
       [e.target.name] : e.target.value
+    })
+  }
+
+  handleNumChange = (e) => {
+    this.setState({
+      [e.target.name] : e.target.valueAsNumber || e.target.value
+    })
+    // console.log(typeof(this.state.[e.target.name]))
+  }
+
+  handleOnClick = () => {
+    const {addShowFn} = this.props
+    const {title, genre, numOfEps, minsPerEp} = this.state
+
+    addShowFn(title, genre, +numOfEps, +minsPerEp)
+    this.setState({
+      title: '',
+      genre: '',
+      numOfEps: '',
+      minsPerEp: ''
     })
   }
 
@@ -24,28 +45,36 @@ class AddShow extends Component {
         <h5>Add A Show!</h5>
         <div className="flex-column">
           <input 
+            type="text"
             className="show-form-input" placeholder="Enter Title"
             name="title"
             value={this.state.title}
-            onChange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleTextChange(e)}
           />
           <input 
+            type="text"
             className="show-form-input" placeholder="Enter Genre"
             name="genre"
             value={this.state.genre}
-            onChange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleTextChange(e)}
           />
           <input 
+            type="number"
             className="show-form-input" placeholder="Enter # of episodes"
             name="numOfEps"
             value={this.state.numOfEps}
-            onChange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleNumChange(e)}
           />
           <input 
+            type="number"
             className="show-form-input" placeholder="Enter mins per episode"
+            name="minsPerEp"
+            value={this.state.minsPerEp}
+            onChange={(e) => this.handleNumChange(e)}
           />
           <button 
             id="submit-btn"
+            onClick={() => this.handleOnClick()}
             >Add to WatchList</button>
         </div>
       </aside>
