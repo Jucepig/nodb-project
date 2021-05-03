@@ -35,7 +35,7 @@ body {
   box-sizing: border-box;
 }
 
-#logo{
+#logo {
   width: 30px;
   margin-bottom: 5px;
 }
@@ -122,7 +122,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 10%;
-
+  border-bottom: 2px dashed #424B54;
 }
 
 #wl-header h2{
@@ -218,13 +218,16 @@ body {
   color: #424B54;
   justify-content: flex-end;
   align-items: center;
+  border-top: 2px dashed #424B54;
 }
 
 #wl-footer div {
   background-color:#F9F7F3;
   height: 100%;
   box-sizing: border-box;
-  border: 2px solid #424B54;
+  border-left: 2px solid #424B54;
+  border-bottom: 2px solid #424B54;
+  border-right: 2px solid #424B54;
   box-shadow: -2px 0 2px #424B54;
   align-items: center;
   display: flex;
