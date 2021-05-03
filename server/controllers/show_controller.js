@@ -5,8 +5,8 @@ let shows = [
      id : 0,
      title : "someShow",
      genre : "someGenre",
-     numOfEps : 1, 
      minsPerEp: 22,
+     numOfEps : 1
    } 
 ]
 
@@ -18,18 +18,18 @@ module.exports = {
   },
 
   postShow : (req, res) => {
-    const {title, genre, numOfEps, minsPerEp} = req.body
-    if(!title || !genre || !numOfEps || !minsPerEp) {
+    const {title, genre, minsPerEp, numOfEps} = req.body
+    if(!title || !genre || !minsPerEp || !numOfEps) {
       return res.status(400).send("The fields 'title', 'genre', 'numOfEps', 'minsPerEp' are required to add a new show.")
     }
     id++
-    let newShow = {id, title, genre, numOfEps, minsPerEp}
+    let newShow = {id, title, genre, minsPerEp, numOfEps}
     shows = [...shows, newShow]
      res.status(200).send(shows)
   },
 
   putShow : (req, res) => {
-    const {title, genre, numOfEps, minsPerEp} = req.body
+    const {title, genre, minsPerEp, numOfEps} = req.body
     const {id} = req.params
     console.log(typeof(reqId))
     const foundIndex = shows.findIndex((el) => {
@@ -40,8 +40,8 @@ module.exports = {
       id: +id,
       title: title || shows[foundIndex].title,
       genre: genre || shows[foundIndex].genre,
-      numOfEps: numOfEps || shows[foundIndex].numOfEps,
-      minsPerEp: minsPerEp || shows[foundIndex].minsPerEp
+      minsPerEp: minsPerEp || shows[foundIndex].minsPerEp,
+      numOfEps: numOfEps || shows[foundIndex].numOfEps
     }
   
     res.status(200).send(shows)

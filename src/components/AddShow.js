@@ -7,8 +7,8 @@ class AddShow extends Component {
     this.state = {
       title: '',
       genre: '',
-      numOfEps: '',
-      minsPerEp: ''
+      minsPerEp: '',
+      numOfEps: ''
     }
   }
 
@@ -28,14 +28,14 @@ class AddShow extends Component {
 
   handleOnClick = () => {
     const {addShowFn} = this.props
-    const {title, genre, numOfEps, minsPerEp} = this.state
+    const {title, genre, minsPerEp, numOfEps } = this.state
 
-    addShowFn(title, genre, +numOfEps, +minsPerEp)
+    addShowFn(title, genre, +minsPerEp, +numOfEps)
     this.setState({
       title: '',
       genre: '',
-      numOfEps: '',
-      minsPerEp: ''
+      minsPerEp: '',
+      numOfEps: ''
     })
   }
 
@@ -60,16 +60,16 @@ class AddShow extends Component {
           />
           <input 
             type="number"
-            className="show-form-input" placeholder="Enter # of episodes"
-            name="numOfEps"
-            value={this.state.numOfEps}
+            className="show-form-input" placeholder="Enter mins per episode"
+            name="minsPerEp"
+            value={this.state.minsPerEp}
             onChange={(e) => this.handleNumChange(e)}
           />
           <input 
             type="number"
-            className="show-form-input" placeholder="Enter mins per episode"
-            name="minsPerEp"
-            value={this.state.minsPerEp}
+            className="show-form-input" placeholder="Enter # of episodes"
+            name="numOfEps"
+            value={this.state.numOfEps}
             onChange={(e) => this.handleNumChange(e)}
           />
           <button 

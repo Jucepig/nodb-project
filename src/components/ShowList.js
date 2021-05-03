@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import axios from 'axios'
 import AddShow from "./AddShow"
+import Show from './Show'
 
 class ShowList extends Component {
   constructor() {
@@ -20,16 +21,16 @@ class ShowList extends Component {
       .catch((err) => console.log(err))
   }
 
-  addShow = (title, genre, numOfEps, minsPerEp) => {
+  addShow = (title, genre, minsPerEp, numOfEps) => {
     axios
-      .post('/api/shows', {title, genre, numOfEps, minsPerEp})
+      .post('/api/shows', {title, genre, minsPerEp, numOfEps })
       .then((res) => this.setState({showsArr : res.data}))
       .catch((err) => console.log(err))
   }
 
-  editShow = (id, title, genre, numOfEps, minsPerEp) => {
+  editShow = (id, title, genre, minsPerEp, numOfEps) => {
     axios
-      .put(`/api/shows/${id}`, {title, genre, numOfEps, minsPerEp})
+      .put(`/api/shows/${id}`, {title, genre, minsPerEp, numOfEps})
       .then((res) => {this.setState({showsArr : res.data})})
       .catch((err) => console.log(err))
   }
@@ -50,18 +51,16 @@ class ShowList extends Component {
         <section id="show-list" className="flex-column">
           <header id="wl-header">WATCHLiiST</header>
           <div id="wl-list" className="flex-column">
-            <div className="show-item flex-row">
-              <div className="si-btns flex-column">
-                <button>Edit</button>
-                <button>Del</button>
-              </div>
-              <div className="show-details flex-row">
-                <span>Title</span>
-                <span>Genre</span>
-                <span>Mins/Episode</span>
-                <span>Runtime</span>
-              </div>
-            </div>
+            {this.state.showsArr.map((show) => {
+              return (
+                <Show 
+                  show={show}
+                  key={show.id}
+                  deleteShowFn={this.deleteShow}
+                  editShowFn={this.editShow}
+                />
+              )
+            })}
           </div>
           <footer id="wl-footer">TOTAL RUNTIME:</footer>
         </section>
