@@ -113,6 +113,16 @@ body {
   width: 25%;
 }
 
+.show-details span{
+  width: 20%;
+}
+
+.show-details-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 #wl-footer {
   background-color: lightblue;
   width: 100%;

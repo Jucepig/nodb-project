@@ -2,6 +2,7 @@ import {Component} from 'react'
 import axios from 'axios'
 import AddShow from "./AddShow"
 import Show from './Show'
+import RuntimeFooter from './RuntimeFooter'
 
 class ShowList extends Component {
   constructor() {
@@ -62,7 +63,7 @@ class ShowList extends Component {
               )
             })}
           </div>
-          <footer id="wl-footer">TOTAL RUNTIME:</footer>
+          <RuntimeFooter showsArr={this.state.showsArr} />
         </section>
       </div>
     )

@@ -125,8 +125,8 @@ class Show extends Component {
           <button id="edit-btn" onClick={this.toggleEdit}>Edit</button>
         </div>
         <div className="show-details flex-row">
-          <span>{show.title}</span>
-          <span>{show.genre}</span>
+          <span className="show-details-text">{show.title}</span>
+          <span className="show-details-text">{show.genre}</span>
           <span>{show.minsPerEp} mins / {show.numOfEps} episodes</span>
           <span>{convertedRuntime}</span>
         </div>
