@@ -7,7 +7,7 @@ let shows = [
      genre : "someGenre",
      minsPerEp: 22,
      numOfEps : 1
-   } 
+   }
 ]
 
 let id = 0
@@ -31,11 +31,11 @@ module.exports = {
   putShow : (req, res) => {
     const {title, genre, minsPerEp, numOfEps} = req.body
     const {id} = req.params
-    console.log(typeof(id), id)
+
     const foundIndex = shows.findIndex((el) => {
       return el.id === +id
     })
-    console.log(foundIndex)
+
     shows[foundIndex] = {
       id: +id,
       title: title || shows[foundIndex].title,

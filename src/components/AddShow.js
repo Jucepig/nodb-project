@@ -40,7 +40,7 @@ class AddShow extends Component {
   render() {
     return(
       <aside id="show-form" className="flex-column">
-        <h5>Add A Show!</h5>
+        <h2>Add A Show!</h2>
         <div className="flex-column">
           <input 
             type="text"

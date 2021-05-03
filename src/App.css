@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/*
+  isabelline : #F9F7F3;
+  Uranian Blue: #B5E2FA;
+  Charcoal: #424B54;
+  Medium Champagne: #EDDEA4;
+  Light Salmon: #F7A072;
+*/
+
 body {
   padding : 0;
   margin: 0;
+  font-family: 'Cabin', sans-serif;
+  color: #424B54;
 }
 
 .flex-row {
@@ -14,73 +26,129 @@ body {
 
 #header {
   justify-content: center;
+  align-items: center;
   height: 70px;
+  background-color: #B5E2FA;
+  text-shadow: 1px 1px #F7A072;
+  border-bottom: 5px dashed #424B54;
+  border-top: 5px dashed #424B54;
+  box-sizing: border-box;
+}
+
+#logo{
+  width: 30px;
+  margin-bottom: 5px;
 }
 
 #main-container {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 70px);
-  background-color: pink;
+  background-color: #fab794;
 }
 
 #main {
   height: 95%;
-  width: 90%;
-  background-color: blanchedalmond;
+  width: 95%;
+  box-sizing: border-box;
+  border: 2px solid #424B54;
 }
+
+/* -----Form----- */
 
 #show-form {
   height: 100%;
-  width: 33%;
-  background-color: cornflowerblue;
+  width: 28%;
+  background-color: #F9F7F3;
   align-items: center;
+  box-sizing: border-box;
+  border-right: 2px ridge #424B54;
+}
+
+#show-form h2{
+  text-shadow: 1px 1px #B5E2FA;
 }
 
 #show-form div {
   height: 80%;
-  width: 70%;
+  width: 80%;
   justify-content: space-around;
   align-items: center;
-  background-color: darkgray;
 }
 
 .show-form-input {
   height: 30px;
   width: 80%;
+  background-color: #cdecfd;
+  font-family: inherit;
 }
 
 #submit-btn {
   height: 50px;
   width: 60%;
   margin: 20px 0;
+  background-color: #EDDEA4;
+  box-shadow: 2px 2px 2px #424B54;
+  color: #424B54;
+  position: relative;
+  text-decoration: none;
+  font-family: inherit;
+  border-radius: 10px;
 }
+
+#submit-btn:hover {
+  background-color: #F7A072;
+  color: whitesmoke;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+#submit-btn:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+/* -----WatchList----- */
 
 #show-list {
   height: 100%;
-  width: 67%;
-  background-color: darkgoldenrod;
+  width: 72%;
   align-items: center;
 }
 
 #wl-header {
-  background-color: darkorchid;
+  background-color: #F9F7F3;
   width: 100%;
-  text-align: center;
-  height: 5%;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+
+}
+
+#wl-header h2{
+  text-shadow: 1px 1px #B5E2FA;
+}
+
+#wl-logo {
+  width: 25px;
+  margin-bottom: 2px;
 }
 
 #wl-list {
-  background-color: lightcoral;
+  background-color: #B5E2FA;
   width: 100%;
-  height: 90%;
+  height: 80%;
   overflow: auto;
 }
 
+/* -----Shows------ */
+
 .show-item {
-  background-color: lightgreen;
+  background-color: #F7A072;
   height: 50px;
   margin-top: 5px;
+  box-sizing: border-box;
+  border: 2px solid #424B54;
 }
 
 .si-btns {
@@ -93,11 +161,28 @@ body {
   width: 70%;
   font-size: 10px;
   text-align: center;
+  background-color: #EDDEA4;
+  box-shadow: 2px 2px 2px #424B54;
+  color: #424B54;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.si-btns button:hover {
+  background-color: #F7A072;
+  color: whitesmoke;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.si-btns button:active {
+  box-shadow: none;
+  top: 5px;
 }
 
 #edit-btn {
   height:50%;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .show-details {
@@ -105,8 +190,8 @@ body {
   background-color: lightgoldenrodyellow;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
   font-size: 14px;
-
 }
 
 .show-details input{
@@ -123,9 +208,28 @@ body {
   white-space: nowrap;
 }
 
+/* -----Footer----- */
+
 #wl-footer {
-  background-color: lightblue;
+  background-color: #F9F7F3;
   width: 100%;
-  height: 5%;
+  height: 10%;
   text-align: right;
+  color: #424B54;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#wl-footer div {
+  background-color:#F9F7F3;
+  height: 100%;
+  box-sizing: border-box;
+  border: 2px solid #424B54;
+  box-shadow: -2px 0 2px #424B54;
+  align-items: center;
+  display: flex;
+}
+
+#wl-footer span {
+  margin: 0 10px;
 }

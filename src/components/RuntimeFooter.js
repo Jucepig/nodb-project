@@ -44,7 +44,11 @@ class RuntimeFooter extends Component {
 
   render() {
     return(
-      <footer id="wl-footer">TOTAL RUNTIME: {this.state.convertedRuntime}</footer>
+      <footer id="wl-footer"className="flex-row">
+        <div>
+          <span>TOTAL RUNTIME: {this.state.convertedRuntime}</span>
+        </div>   
+      </footer>
     )
   }
 }

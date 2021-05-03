@@ -16,16 +16,16 @@ class Show extends Component {
 
   componentDidUpdate(prevProps) {
     if(this.props.show.minsPerEp !== prevProps.show.minsPerEp || this.props.show.numOfEps !== prevProps.show.numOfEps) {
-      this.findTotalRuntime(this.props.show.minsPerEp, this.props.show.numOfEps)
+      this.findShowRuntime(this.props.show.minsPerEp, this.props.show.numOfEps)
     }
   }
 
   componentDidMount() {
    const{show} = this.props
-   this.findTotalRuntime(show.minsPerEp, show.numOfEps)
+   this.findShowRuntime(show.minsPerEp, show.numOfEps)
   }
 
-  findTotalRuntime(minsPerEp, numOfEps) {
+  findShowRuntime(minsPerEp, numOfEps) {
     const totalMins = +minsPerEp * +numOfEps
     const hours = (totalMins/60)
     const rHours = Math.floor(hours)
