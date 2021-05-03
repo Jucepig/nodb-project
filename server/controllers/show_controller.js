@@ -31,7 +31,7 @@ module.exports = {
   putShow : (req, res) => {
     const {title, genre, minsPerEp, numOfEps} = req.body
     const {id} = req.params
-    console.log(typeof(reqId))
+    console.log(typeof(id), id)
     const foundIndex = shows.findIndex((el) => {
       return el.id === +id
     })

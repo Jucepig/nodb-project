@@ -13,7 +13,6 @@ class AddShow extends Component {
   }
 
   handleTextChange = (e) => {
-    console.log(`${e.target.name} : ${e.target.value}`)
     this.setState({
       [e.target.name] : e.target.value
     })
@@ -23,7 +22,6 @@ class AddShow extends Component {
     this.setState({
       [e.target.name] : e.target.valueAsNumber || e.target.value
     })
-    // console.log(typeof(this.state.[e.target.name]))
   }
 
   handleOnClick = () => {

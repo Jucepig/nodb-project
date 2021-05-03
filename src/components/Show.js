@@ -8,9 +8,32 @@ class Show extends Component {
       editMode: false,
       title: '',
       genre: '',
-      minsPerEp: '',
-      numOfEps: ''
+      minsPerEp: 0,
+      numOfEps: 0,
+      convertedRuntime: ''
     }
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.show.minsPerEp !== prevProps.show.minsPerEp || this.props.show.numOfEps !== prevProps.show.numOfEps) {
+      this.findTotalRuntime(this.props.show.minsPerEp, this.props.show.numOfEps)
+    }
+  }
+
+  componentDidMount() {
+   const{show} = this.props
+   this.findTotalRuntime(show.minsPerEp, show.numOfEps)
+  }
+
+  findTotalRuntime(minsPerEp, numOfEps) {
+    const totalMins = +minsPerEp * +numOfEps
+    const hours = (totalMins/60)
+    const rHours = Math.floor(hours)
+    const mins = (hours - rHours) * 60
+    const rMins = Math.round(mins)
+    this.setState({
+      convertedRuntime: `${rHours} hour(s) and ${rMins} min(s)`
+    })
   }
 
   handleTextChange = (e) => {
@@ -46,18 +69,24 @@ class Show extends Component {
 
   handleDelete = (id) => {
     const {deleteShowFn} = this.props
-    
     deleteShowFn(id)
     this.toggleEdit()
   }
 
+
+
   render() {
-    const {show, key} = this.props
+    const {show} = this.props
+    const {convertedRuntime} = this.state
     return this.state.editMode ? (
-      <div key={key} className="show-item flex-row">
+      <div key={show.id} className="show-item flex-row">
         <div className="si-btns flex-column">
-          <button onClick={this.handleSave}>Save</button>
-          <button onClick={()=> this.handleDelete(show.id)}>Delete</button>
+          <button 
+            onClick={this.handleSave}
+          >Save</button>
+          <button 
+            onClick={()=> this.handleDelete(show.id)}
+          >Delete</button>
         </div>
         <div className="show-details flex-row">
           <input
@@ -76,14 +105,14 @@ class Show extends Component {
           />
           <input
             type="number"
-            value={this.state.minsPerEp}
+            value={this.state.minsPerEp || ''}
             placeholder={`${show.minsPerEp} min(s)`}
             name="minsPerEp"
             onChange={(e) => this.handleNumChange(e)}
           />
           <input 
             type="number"
-            value={this.state.numOfEps}
+            value={this.state.numOfEps || ''}
             placeholder={`${show.numOfEps} episode(s)`}
             name="numOfEps"
             onChange={(e) => this.handleNumChange(e)}
@@ -91,15 +120,15 @@ class Show extends Component {
         </div>
       </div>
     ):(
-      <div key={key} className="show-item flex-row">
+      <div key={show.id} className="show-item flex-row">
         <div className="si-btns flex-row">
           <button id="edit-btn" onClick={this.toggleEdit}>Edit</button>
         </div>
         <div className="show-details flex-row">
           <span>{show.title}</span>
           <span>{show.genre}</span>
-          <span>{show.minsPerEp} mins/{show.numOfEps} episodes</span>
-          <span>Runtime</span>
+          <span>{show.minsPerEp} mins / {show.numOfEps} episodes</span>
+          <span>{convertedRuntime}</span>
         </div>
       </div>
     )
