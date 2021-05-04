@@ -36,10 +36,24 @@ class RuntimeFooter extends Component {
     const days = Math.floor(totalMins/1440)
     const hours = Math.floor((totalMins - (days*1440))/60)
     const mins = Math.round(totalMins%60)
+    if(days) {
+      return this.setState({
+        convertedRuntime: `${days} day(s), ${hours} hour(s) and ${mins} min(s)`
+      })
+    } else if (hours) {
+      return this.setState({
+        convertedRuntime: `${hours} hour(s) and ${mins} min(s)`
+      })
+    } else if(mins) {
+      return this.setState({
+        convertedRuntime: `${mins} min(s)`
+      })
+    } else {
+      return this.setState({
+        convertedRuntime: `Your schedule is free!`
+      })
+    }
 
-    this.setState({
-      convertedRuntime: `${days} day(s), ${hours} hour(s) and ${mins} min(s)`
-    })
   }
 
   render() {
