@@ -3,10 +3,10 @@ const e = require("express")
 let shows = [
    {
      id : 0,
-     title : "someShow",
-     genre : "someGenre",
-     minsPerEp: 22,
-     numOfEps : 1
+     title : "One Piece",
+     genre : "Anime",
+     minsPerEp: 23,
+     numOfEps : 970
    }
 ]
 

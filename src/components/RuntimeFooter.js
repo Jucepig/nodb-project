@@ -33,12 +33,12 @@ class RuntimeFooter extends Component {
   }
 
   findTotalRuntime(totalMins) {
-    const hours = (totalMins/60)
-    const rHours = Math.floor(hours)
-    const mins = (hours - rHours) * 60
-    const rMins = Math.round(mins)
+    const days = Math.floor(totalMins/1440)
+    const hours = Math.floor((totalMins - (days*1440))/60)
+    const mins = Math.round(totalMins%60)
+
     this.setState({
-      convertedRuntime: `${rHours} hour(s) and ${rMins} min(s)`
+      convertedRuntime: `${days} day(s), ${hours} hour(s) and ${mins} min(s)`
     })
   }
 
