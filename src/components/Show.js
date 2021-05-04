@@ -87,34 +87,46 @@ class Show extends Component {
           </button>
         </div>
         <div className="show-details flex-row">
-          <input
-            type="text"
-            value={this.state.title}
-            placeholder={show.title}
-            name="title"
-            onChange={(e) => this.handleTextChange(e)}
-          />
-          <input
-            type="text"
-            value={this.state.genre}
-            placeholder={show.genre}
-            name="genre"
-            onChange={(e) => this.handleTextChange(e)}
-          />
-          <input
-            type="number"
-            value={this.state.minsPerEp || ''}
-            placeholder={`${show.minsPerEp} min(s)`}
-            name="minsPerEp"
-            onChange={(e) => this.handleNumChange(e)}
-          />
-          <input 
-            type="number"
-            value={this.state.numOfEps || ''}
-            placeholder={`${show.numOfEps} episode(s)`}
-            name="numOfEps"
-            onChange={(e) => this.handleNumChange(e)}
-          />
+          <div className="edit-mode flex-column">
+            <span className="detail-name">Title</span>
+            <input
+              type="text"
+              value={this.state.title}
+              placeholder={show.title}
+              name="title"
+              onChange={(e) => this.handleTextChange(e)}
+            />
+          </div>
+          <div className="edit-mode flex-column">
+            <span className="detail-name">Genre</span>
+            <input
+              type="text"
+              value={this.state.genre}
+              placeholder={show.genre}
+              name="genre"
+              onChange={(e) => this.handleTextChange(e)}
+            />
+          </div>
+          <div className="edit-mode flex-column">
+            <span className="detail-name">Mins Per Episode</span>
+            <input
+              type="number"
+              value={this.state.minsPerEp || ''}
+              placeholder={`${show.minsPerEp} min(s)`}
+              name="minsPerEp"
+              onChange={(e) => this.handleNumChange(e)}
+            />
+          </div>
+          <div className="edit-mode flex-column">
+            <span className="detail-name">Number of Episodes</span>
+            <input 
+              type="number"
+              value={this.state.numOfEps || ''}
+              placeholder={`${show.numOfEps} episode(s)`}
+              name="numOfEps"
+              onChange={(e) => this.handleNumChange(e)}
+            />
+          </div>
         </div>
       </div>
     ):(

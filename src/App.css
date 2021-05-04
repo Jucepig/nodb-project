@@ -195,14 +195,19 @@ body {
   font-size: 14px;
 }
 
-.show-details input{
-  width: 22%;
+.edit-mode {
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-mode input{
+  width: 90%;
   text-align: center;
 }
 
 .show-details div{
   height: 100%;
-  width: 20%;
+  width: 25%;
   justify-content: space-evenly;
 }
 
