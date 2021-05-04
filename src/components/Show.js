@@ -81,12 +81,10 @@ class Show extends Component {
     return this.state.editMode ? (
       <div key={show.id} className="show-item flex-row">
         <div className="si-btns flex-column">
-          <button 
-            onClick={this.handleSave}
-          >Save</button>
-          <button 
-            onClick={()=> this.handleDelete(show.id)}
-          >Delete</button>
+          <button onClick={this.handleSave}>Save
+          </button>
+          <button onClick={()=> this.handleDelete(show.id)}>Delete
+          </button>
         </div>
         <div className="show-details flex-row">
           <input
@@ -121,15 +119,27 @@ class Show extends Component {
       </div>
     ):(
       <div key={show.id} className="show-item flex-row">
-        <div className="si-btns flex-row">
+        <section className="si-btns flex-row">
           <button id="edit-btn" onClick={this.toggleEdit}>Edit</button>
-        </div>
-        <div className="show-details flex-row">
-          <span className="show-details-text">{show.title}</span>
-          <span className="show-details-text">{show.genre}</span>
-          <span>{show.minsPerEp} mins / {show.numOfEps} episodes</span>
-          <span>{convertedRuntime}</span>
-        </div>
+        </section>
+        <section className="show-details flex-row">
+          <div className="show-details-text flex-column">
+            <span className="detail-name">Title</span>
+            <span>{show.title}</span>
+          </div>
+          <div className="show-details-text flex-column">
+            <span className="detail-name">Genre</span>
+            <span>{show.genre}</span>
+          </div>
+          <div className="flex-column">
+            <span className="detail-name">Episode Info</span>
+            <span>{show.minsPerEp} mins / {show.numOfEps} episodes</span>
+          </div>
+          <div className="flex-column">
+            <span className="detail-name">Runtime</span>
+            <span>{convertedRuntime}</span>
+          </div>
+        </section>
       </div>
     )
   }

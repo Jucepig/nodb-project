@@ -145,7 +145,7 @@ body {
 
 .show-item {
   background-color: #F7A072;
-  height: 50px;
+  height: 70px;
   margin-top: 5px;
   box-sizing: border-box;
   border: 2px solid #424B54;
@@ -159,6 +159,7 @@ body {
 
 .si-btns button{
   width: 70%;
+  height: 35%;
   font-size: 10px;
   text-align: center;
   background-color: #EDDEA4;
@@ -195,17 +196,26 @@ body {
 }
 
 .show-details input{
-  width: 25%;
+  width: 22%;
+  text-align: center;
 }
 
-.show-details span{
+.show-details div{
+  height: 100%;
   width: 20%;
+  justify-content: space-evenly;
 }
 
 .show-details-text {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.detail-name {
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: underline;
 }
 
 /* -----Footer----- */

@@ -50,11 +50,11 @@ class ShowList extends Component {
         <AddShow addShowFn={this.addShow} />
 
         <section id="show-list" className="flex-column">
-          <header id="wl-header" className="flex-row">
+          <div id="wl-header" className="flex-row">
             <h2>YOUR WATCHL</h2> 
             <img id="wl-logo" src="https://drive.google.com/uc?export=view&id=1xBLHA_RJ13Thvwh6KFvSOfZ8ldjZ7Wdy" alt="watchlist-eye-logo"/> 
             <h2>ST</h2>
-          </header>
+          </div>
           <div id="wl-list" className="flex-column">
             {this.state.showsArr.map((show) => {
               return (
