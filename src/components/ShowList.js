@@ -52,7 +52,7 @@ class ShowList extends Component {
         <section id="show-list" className="flex-column">
           <header id="wl-header" className="flex-row">
             <h2>YOUR WATCHL</h2> 
-            <img id="wl-logo" src="https://www.flaticon.com/svg/vstatic/svg/599/599516.svg?token=exp=1620075062~hmac=ad3f82253a4d7ad540428effb68701a2" alt="watchlist-eye-logo"/> 
+            <img id="wl-logo" src="https://drive.google.com/uc?export=view&id=1xBLHA_RJ13Thvwh6KFvSOfZ8ldjZ7Wdy" alt="watchlist-eye-logo"/> 
             <h2>ST</h2>
           </header>
           <div id="wl-list" className="flex-column">
